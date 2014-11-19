@@ -1,5 +1,5 @@
 
-    <div class="container" style="min-height: 650px">
+    <div class="container">
 
       <div class="row login">
         <div class="col-xs-12" align="center">

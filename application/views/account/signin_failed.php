@@ -3,6 +3,10 @@
 
       <div class="row login">
         <div class="col-xs-12" align="center">
+          <div class="alert alert-dismissable alert-danger" style="width: 300px">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>Email or password is wrong!</strong>
+          </div>
           <h1 id="login-title"><span class="glyphicon glyphicon-cutlery"></span> MyRecipes</h1>
           <div style="width: 250px">
             <form method="post" accept-charset="utf-8" action="signin" />
