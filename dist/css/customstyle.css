@@ -1,0 +1,45 @@
+
+
+.login {
+	margin-top: 90px;
+}
+
+.well-bg {
+	background-color: #FFFFFF;
+}
+
+.container-header {
+	max-width: 950px;
+}
+
+.container-body{
+	max-width: 900px;
+}
+
+#login-title {
+	font-size: 40px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.recipes-img {
+	width: 100px;
+}
+
+.top-recipes {
+	color: #3c763d;
+	border-color: #d6e9c6;
+}
+
+.top-recipes-heading {
+	background-color: #dff0d8;
+}
+
+.new-recipes {
+	color: #8a6d3b;
+	border-color: #faebcc;
+}
+
+.new-recipes-heading {
+	background-color: #fcf8e3;
+}
