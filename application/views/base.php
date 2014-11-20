@@ -29,7 +29,7 @@
 							<ul class="dropdown-menu">
 								<li><a href="<?php echo site_url("recipes");?>">Recipes List</a></li>
 								<li class="divider"></li>
-								<li><a href="<?php echo site_url("recipes/create_recipes/1");?>">Create Recipes</a></li>
+								<li><a href="<?php echo site_url("recipes/create_recipe/1");?>">Create Recipes</a></li>
 							</ul>
 						</li>
 						<li>

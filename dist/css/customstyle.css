@@ -1,4 +1,10 @@
+.user-img {
+	padding: 0px;
+}
 
+.user-img .thumbnail {
+	margin: 0px;
+}
 
 .login {
 	min-height: 550px;

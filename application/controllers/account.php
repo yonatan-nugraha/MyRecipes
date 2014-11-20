@@ -5,13 +5,14 @@ class Account extends MY_Controller {
 	public function __construct() 
 	{
 		parent:: __construct();
-    $this->load->model('User');
+    $this->load->model('user');
 		$this->load->library('session');
 		$this->load->helper('url');
 	}
 
-  public function set_session($email, $name) 
+  public function set_session($userid, $email, $name) 
   {
+    $this->session->set_userdata('userid', $userid);
     $this->session->set_userdata('email', $email);
     $this->session->set_userdata('name', $name);
 
@@ -40,18 +41,18 @@ class Account extends MY_Controller {
     $password = $this->input->post('inputPassword');
 
   	//check if user exists
-    if (!$this->User->check_user_exist($email)) {    
+    if (!$this->user->check_user_exist($email)) {    
       redirect('account/signin_failed');
     }
 
   	//check if user exists
-    if (!$this->User->check_password($email, $password)) {
+    if (!$this->user->check_password($email, $password)) {
       redirect('account/signin_failed');
     }
 
-    $user = $this->User->get_user($email);
+    $user = $this->user->get_user($email);
 		
-		$this->set_session($user->email, $user->name);
+		$this->set_session($user->userid, $user->email, $user->name);
 
   }
 
@@ -72,14 +73,14 @@ class Account extends MY_Controller {
     $password = $this->input->post('password');
 
   	//check if user exists
-    if (!$this->User->check_user_exist($email)) {
+    if (!$this->user->check_user_exist($email)) {
 			$this->signup_failed();
     }
 
     //add new user
     try {
-    	$this->User->add_user($name, $email, $password);
-    	$this->set_session($email, $name);
+    	$this->user->add_user($name, $email, $password);
+    	$this->set_session($this->user->get_user($email)->userid, $email, $name);
     } catch (Exception $e) {
       $this->signup_failed();
     }

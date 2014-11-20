@@ -11,6 +11,7 @@ class MY_Controller extends CI_Controller {
         $this->load->helper(array('form','url','html'));
 
         $data = array(
+         'userid' => $this->session->userdata('userid'),    
          'name' => $this->session->userdata('name'),
          'email' => $this->session->userdata('email'),
          'password' => $this->session->userdata('password')
@@ -19,10 +20,10 @@ class MY_Controller extends CI_Controller {
         $data['str'] = $this->uri->segment(2);
         $this->load->library('session');
         $id=(int)$this->session->userdata('id');
+
         if($id != '')
         {
-            $this->load->model('user');
-			 $query =$this->user->retrieve($id);
+			$query =$this->user->retrieve($id);
             $data['f_id'] = $query['id'];
             $data['f_username']= $query['username'];
         }

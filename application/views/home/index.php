@@ -10,7 +10,7 @@
   <div class="row">
 	<?php for ($i=0; $i<6; $i++) { ?>
       <div class="col-md-4 col-sm-6 portfolio-item">
-        <a href="<?php echo site_url("recipes/view_recipes");?>" class="portfolio-link" data-toggle="modal">
+        <a href="<?php echo site_url("recipes/view_recipe/1");?>" class="portfolio-link" data-toggle="modal">
           <div class="portfolio-hover">
             <div class="portfolio-hover-content">
               <i class="fa fa-plus fa-3x"></i>
