@@ -4,17 +4,26 @@
 
         <div class="col-xs-6">
           <div class="col-xs-12 portfolio-item">
-            <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+            <a href="" class="portfolio-link" data-toggle="modal">
               <div class="portfolio-hover">
                 <div class="portfolio-hover-content">
                   <i class="fa fa-plus fa-3x"></i>
                 </div>
               </div>
-              <img src="<?php echo base_url(); ?>img/recipes/roundicons.png" class="img-responsive" alt="">
+              <img src="<?php echo base_url(). "img/samplefoods/".$recipeimg; ?>" class="img-responsive" alt="">
             </a>
             <div class="portfolio-caption">
               <h4><?php echo $recipename; ?></h4>
               <p class="text-muted"><?php echo $description; ?></p>
+              <hr>
+              <div id="ingredients" class="text-left">
+                <h5>Ingredients</h5>
+                <?php echo $ingredients; ?>
+              </div>
+              <div id="steps" class="text-left">
+                <h5>Steps</h5>
+                <?php echo $steps; ?>
+              </div>
             </div>         
           </div>
         </div>
@@ -27,7 +36,7 @@
               <p class="help-block text-danger"></p>
             </div>
             <div class="text-right">
-              <a id="commentbtn" class="btn btn-default btn-sm">Leave a Comment</a>
+              <button type="button" id="commentbtn" class="btn btn-primary btn-sm">Leave a Comment</a>
             </div>
             <div id="comments">
               <?php foreach($comments as $comment) { ?>

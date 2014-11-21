@@ -19,7 +19,7 @@ class Comments extends CI_Controller {
 		date_default_timezone_set('Asia/Hong_Kong'); 
 		$date = date("Y-m-d H:i:s");
 
-		$this->comment->add_comment(1, $userid, $comment, $date);
+		$this->comment->add_comment($recipeid, $userid, $comment, $date);
 		$this->view_comments($recipeid);
 	}
 

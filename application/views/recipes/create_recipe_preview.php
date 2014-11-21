@@ -12,7 +12,7 @@
         <div class="col-lg-12">
           <form method="post" accept-charset="utf-8" action="publish" />
             <div class="row">
-              <div class="col-md-4">                    
+              <div class="col-md-6">                    
 								<div class="col-md-12 col-sm-6 portfolio-item text-center">
             			<a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
               			<div class="portfolio-hover">
@@ -20,7 +20,7 @@
                   			<i class="fa fa-plus fa-3x"></i>
                 			</div>
               			</div>
-              			<img src="<?php echo base_url(); ?>img/recipes/roundicons.png" class="img-responsive" alt="">
+              			<img src="<?php echo base_url()."img/samplefoods/". $recipeimg .".jpg"; ?>" class="img-responsive" alt="">
             			</a>
 			            <div class="portfolio-caption">
 			              <h4><?php echo (!isset($recipename) || empty($recipename)) ? "" : $recipename; ?></h4>
@@ -28,16 +28,16 @@
 			            </div>
           			</div>
               </div>
-              <div class="col-md-8">
-                <div class="form-group">
-                  <textarea class="form-control" name="ingredients" placeholder="List of Ingredients and Quantities"><?php echo (!isset($ingredients) || empty($ingredients)) ? "" : $ingredients; ?></textarea>
-                  <p class="help-block text-danger"></p>
-                </div>
+              <div class="col-md-6">
+                <h4>Ingredients</h4>
+                <p><?php echo $ingredients; ?></p>
+                <h4>Steps</h4>
+                <p><?php echo $steps; ?></p>
               </div>
               <div class="clearfix"></div>
             		<div class="col-lg-12 text-right">
                   <div id="success"></div>
-                  <a href="<?php echo site_url("recipes/create_recipes/1");?>"><button type="button" class="btn btn-xl">Back</button></a>
+                  <a href="<?php echo site_url("recipes/create_recipe/3");?>"><button type="button" class="btn btn-xl">Back</button></a>
                   <button type="submit" class="btn btn-xl">Publish</button>
               </div>
             </div>

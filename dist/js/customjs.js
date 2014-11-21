@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
   $("#commentbtn").click(function() {
-    var recipeid = 1;
+    var recipeid = $(location).attr('pathname').split('/').pop();
     var comment = $("#commenttxtarea").val();
 
     var url = $(location).attr('origin') + '/myrecipes/index.php/comments/add_comment?';
@@ -16,3 +16,13 @@ $(document).ready(function() {
     });
   });
 });
+
+function getRecipeImgId(id) {
+  var imgid = "#" + id;
+  $("a").removeClass("active");
+  $(imgid).addClass("active");
+
+  $.ajax({
+    url:$(location).attr('origin') + '/myrecipes/index.php/recipes/store_recipeimg/' + id,
+  });
+}

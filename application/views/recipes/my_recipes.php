@@ -4,23 +4,23 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading">My Recipes List</h2>
-            <h3 class="section-subheading text-muted">Create more of your very own recipes <a href="<?php echo site_url("recipes/create_recipes/1");?>">here</a>.</h3>
+            <h3 class="section-subheading text-muted">Create more of your very own recipes <a href="<?php echo site_url("recipes/create_recipe/1");?>">here</a>.</h3>
           </div>
       </div>
       <div class="row">
-				<?php for ($i=0; $i<3; $i++) { ?>
+				<?php foreach($recipes as $recipe) { ?>
         <div class="col-md-4 col-sm-6 portfolio-item">
-          <a href="<?php echo site_url("recipes/view_recipe/1");?>" class="portfolio-link">
+          <a href="<?php echo site_url("recipes/view_recipe/".$recipe->recipeid);?>" class="portfolio-link">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="fa fa-plus fa-3x"></i>
               </div>
             </div>
-            <img src="<?php echo base_url(); ?>img/recipes/golden.png" class="img-responsive" alt="">
+            <img src="<?php echo base_url()."img/samplefoods/".$recipe->recipeimg; ?>" class="img-responsive" alt="">
           </a>
           <div class="portfolio-caption">
-            <h4>Secret Coffee</h4>
-            <p class="text-muted">Secret Coffee</p>
+            <h4><?php echo $recipe->recipename; ?></h4>
+            <p class="text-muted"><?php echo $recipe->description; ?></p>
           </div>
         </div>
         <?php } ?>            

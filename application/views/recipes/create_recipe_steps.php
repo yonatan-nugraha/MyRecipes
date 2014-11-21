@@ -21,7 +21,7 @@
                       <i class="fa fa-plus fa-3x"></i>
                     </div>
                   </div>
-                  <img src="<?php echo base_url(); ?>img/recipes/roundicons.png" class="img-responsive" alt="">
+                  <img src="<?php echo base_url()."img/samplefoods/". $recipeimg .".jpg"; ?>" class="img-responsive" alt="">
                 </a>
                 <div class="portfolio-caption">
                   <h4><?php echo (!isset($recipename) || empty($recipename)) ? "" : $recipename; ?></h4>
@@ -32,15 +32,15 @@
 
             <div class="col-md-8">
            		<div class="form-group">
-                <input type="text" class="form-control" placeholder="Step 1" id="name" required data-validation-required-message="Please enter your name.">
+                <input type="text" class="form-control" placeholder="Step 1" value="<?php echo (!isset($step1) || empty($step1)) ? "" : $step1; ?>" name="step1" required>
                 <p class="help-block text-danger"></p>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Step 2" id="name" required data-validation-required-message="Please enter your name.">
+                <input type="text" class="form-control" placeholder="Step 2" name="step2">
                 <p class="help-block text-danger"></p>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="step 3" id="name" required data-validation-required-message="Please enter your name.">
+                <input type="text" class="form-control" placeholder="Step 3" name="step3">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
@@ -48,7 +48,7 @@
             <div class="clearfix"></div>
               <div class="col-lg-12 text-right">
                 <div id="success"></div>
-                <a href="<?php echo site_url("recipes/create_recipes/2");?>"><button type="button" class="btn btn-xl">Back</button></a>
+                <a href="<?php echo site_url("recipes/create_recipe/2");?>"><button type="button" class="btn btn-xl">Back</button></a>
                 <button type="submit" class="btn btn-xl">Next</button>
               </div>
           </div>

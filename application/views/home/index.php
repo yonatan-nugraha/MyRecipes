@@ -8,19 +8,19 @@
       </div>
   </div>
   <div class="row">
-	<?php for ($i=0; $i<6; $i++) { ?>
-      <div class="col-md-4 col-sm-6 portfolio-item">
-        <a href="<?php echo site_url("recipes/view_recipe/1");?>" class="portfolio-link" data-toggle="modal">
+	<?php foreach($recipes as $recipe) { ?>
+      <div class="col-xs-4 portfolio-item">
+        <a href="<?php echo site_url("recipes/view_recipe/".$recipe->recipeid); ?>" class="portfolio-link" data-toggle="modal">
           <div class="portfolio-hover">
             <div class="portfolio-hover-content">
               <i class="fa fa-plus fa-3x"></i>
             </div>
           </div>
-          <img src="<?php echo base_url(); ?>img/recipes/roundicons.png" class="img-responsive" alt="">
+          <img src="<?php echo base_url()."img/samplefoods/".$recipe->recipeimg; ?>" class="img-responsive" alt="">
         </a>
         <div class="portfolio-caption">
-          <h4>Round Icons</h4>
-          <p class="text-muted">Graphic Design</p>
+          <h4><?php echo $recipe->recipename; ?></h4>
+          <p class="text-muted"><?php echo $recipe->description; ?></p>
         </div>
       </div>
       <?php } ?>            

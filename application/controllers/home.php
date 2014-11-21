@@ -6,13 +6,12 @@ class Home extends MY_Controller {
 		parent:: __construct();
 		$this->load->helper('url');		
 		$this->load->library('session');
+	    $this->load->model('recipe');
 	}
 
 	public function index() {
-		$data = array(
-	     'name' => $this->session->userdata('name'),
-	     'email' => $this->session->userdata('email'),
-	    );
+		$recipes = $this->recipe->get_top_recipes();
+		$data['recipes'] = $recipes;
 		$this->load->view("home/index", $data);
 	}
 
